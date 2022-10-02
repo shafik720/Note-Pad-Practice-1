@@ -37,10 +37,11 @@ body{
 .add-box span{
     width: 90px;
     height: 90px;
-    border: 3px dashed #007ACC;  
-    color: #007ACC;
+    border: 3px dashed #34344e;  
+    color: #34344e;
     font-size: 35px;  
     border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .add-box p{
     margin-top: 30px;
@@ -73,8 +74,30 @@ body{
     border-top: 2px solid #ccc;
     padding-top: 15px;
     margin-top: 10px;
+    position: relative;
 }
 .note-bottom i{
     color: #007ACC;
     cursor: pointer;
+}
+.note-bottom .menu{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    width: 150px;
+    background: white;
+}
+.note-bottom .menu span{
+    display: block;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.note-bottom .menu span:hover{
+    background: #ccc;
+}
+.note-bottom .menu span i{
+    margin-right: 15px;
 }
