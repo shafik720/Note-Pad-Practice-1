@@ -9,5 +9,5 @@ addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
 })
 closeIcon.addEventListener('click',()=>{
-    console.log('Closed');
+    popupBox.classList.remove('show');
 })
