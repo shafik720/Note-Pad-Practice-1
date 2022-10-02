@@ -43,6 +43,14 @@ body{
     font-size: 25px;
     font-weight: 600;
 }
+.popup-header i{
+    color: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+.popup-header i:hover{
+    color: #355c7d;
+}
 .form-title, .form-description{
     display: flex;
     flex-direction: column;
