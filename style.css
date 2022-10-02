@@ -228,4 +228,22 @@ body{
 /*--------------------------------------------------- 
 For ipads, tablet:  
 ---------------------------------------------------*/
-@media only screen and (min-width:481px) and (max-width:768px) {}
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .wrapper{
+        margin: 30px auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .wrapper{
+        margin: 30px auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
