@@ -47,3 +47,33 @@ body{
     font-weight: 600;
     color: #007ACC;
 }
+
+.note{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5px 15px 20px 20px;
+}
+.note-header p{
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.note-details{
+    color: grey;
+    height: 110px;
+    overflow-y: auto;
+}
+.note-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ccc;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+.note-bottom i{
+    color: #007ACC;
+    cursor: pointer;
+}
