@@ -6,4 +6,22 @@
 }
 body{
     font-family: 'Nunito', sans-serif ;
+    background: linear-gradient(45deg, #336666, #6b9997);
 }
+
+.wrapper{
+    margin: 150px;
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.add-box, .note{
+    background: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    height: 250px;
+}
+
+.add-box
