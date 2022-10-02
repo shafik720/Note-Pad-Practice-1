@@ -25,6 +25,7 @@ body{
     border-radius: 5px;
     padding: 10px 15px;
     height: 250px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
 }
 
 .add-box, .add-box span{
