@@ -17,6 +17,9 @@ body{
     gap: 20px;
 }
 
+.add-box{
+    cursor: pointer;
+}
 .add-box, .note{
     background: white;
     border-radius: 5px;
@@ -24,4 +27,23 @@ body{
     height: 250px;
 }
 
-.add-box
+.add-box, .add-box span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.add-box span{
+    width: 90px;
+    height: 90px;
+    border: 3px dashed #007ACC;  
+    color: #007ACC;
+    font-size: 35px;  
+    border-radius: 50%;
+}
+.add-box p{
+    margin-top: 30px;
+    font-size: 23px;
+    font-weight: 600;
+    color: #007ACC;
+}
