@@ -88,7 +88,10 @@ let showMenu = (any) => {
 }
 
 let deleteNote = (any) =>{
-    notes.splice(any,1);
-    localStorage.setItem('notes', JSON.stringify(notes));
+    let deleteConfirm = confirm('Delete this note ?');
+    if(deleteConfirm){
+        notes.splice(any,1);
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }    
     showNotes();
 }
