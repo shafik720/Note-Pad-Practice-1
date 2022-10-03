@@ -6,7 +6,9 @@
 }
 body{
     font-family: 'Nunito', sans-serif ;
-    background: linear-gradient(45deg, #336666, #6b9997);
+    background: linear-gradient(45deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: -moz-linear-gradient(45deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: -webkit-linear-gradient(45deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
 }
 
 
