@@ -34,7 +34,7 @@ addBtn.addEventListener('click',()=>{
 
 let showNotes = () => {
     document.querySelectorAll('.note').forEach(note=>note.remove());
-    notes.forEach(note=>{
+    notes.forEach((note, id)=>{
         let div = `
         <div class="note">            
         <div class="note-body">
@@ -50,7 +50,7 @@ let showNotes = () => {
             <span onclick="showMenu(this)"><i class="fa-solid fa-ellipsis"></i>
                 <div class="menu">
                     <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
-                    <span><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
+                    <span onclick="deleteNote(${id})"><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
                 </div>
             </span>                
         </div>
@@ -68,4 +68,10 @@ let showMenu = (any) => {
             any.parentElement.classList.remove('show');
         }
     })
+}
+
+let deleteNote = (any) =>{
+    notes.splice(any,1);
+    localStorage.setItem('notes', JSON.stringify(notes));
+    showNotes();
 }
