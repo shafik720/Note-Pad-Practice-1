@@ -95,8 +95,11 @@ let updateNote = (id, title, desc) => {
 }
 
 let deleteNote = (id) => {
-    notes.splice(id, 1);
-    localStorage.setItem('notes', JSON.stringify(notes));
+    let isConfirm = confirm('Proceed to Delete ? ');
+    if(isConfirm){
+        notes.splice(id, 1);
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }    
     showNotes();
 }
 
