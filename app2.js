@@ -48,12 +48,21 @@ const showNotes = () =>{
             </div>
         </div>
         <div class="note-bottom">
-            <span>${note.date}</span>
-            <i class="fa-solid fa-ellipsis"></i>
-        </div>
+                <span>02 October, 2022</span>
+                <span onclick="showMenu(this)"><i class="fa-solid fa-ellipsis"></i>
+                    <div class="menu">
+                        <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
+                        <span><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
+                    </div>
+                </span>                
+            </div>
     </div>
         `;
         addBox.insertAdjacentHTML('afterend',div);
     })    
 }
 showNotes();
+
+const showMenu = (any) => {
+    any.parentElement.classList.add('show');
+}
