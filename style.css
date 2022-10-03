@@ -7,6 +7,11 @@
 body{
     font-family: 'Nunito', sans-serif ;
     background: linear-gradient(45deg, #336666, #6b9997);
+    background-color: white;
+    background-image: url(img/cool-background.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
 }
 
 
