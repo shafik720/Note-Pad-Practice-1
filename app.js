@@ -7,6 +7,7 @@ addNoteTitle = popupBox.querySelector('.form-title input'),
 addNoteDesc = popupBox.querySelector('.form-description textarea')
 
 let isUpdate = false, updateId;
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 let notes = JSON.parse(localStorage.getItem('notes') || '[]') ;
 addBox.addEventListener('click',()=>{
@@ -22,8 +23,8 @@ closeIcon.addEventListener('click',()=>{
 
 addBtn.addEventListener('click',()=>{        
     let dateObj = new Date();
-    let day = dateObj.getDay();
-    let month = dateObj.getDay();
+    let day = dateObj.getDate();
+    let month = months[dateObj.getMonth()];
     let year = dateObj.getFullYear();
     let filterDesc = addNoteDesc.value.replaceAll('\n','<br/>');
     if(!addNoteTitle.value && !addNoteDesc.value){        
