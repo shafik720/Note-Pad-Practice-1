@@ -29,6 +29,7 @@ addBtn.addEventListener('click',()=>{
         notes.push(noteObj);
         localStorage.setItem('notes', JSON.stringify(notes));
         closeIcon.click();
+        showNotes();
     }    
 })
 
