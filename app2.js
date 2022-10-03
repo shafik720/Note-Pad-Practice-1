@@ -65,4 +65,9 @@ showNotes();
 
 const showMenu = (any) => {
     any.parentElement.classList.add('show');
+    document.addEventListener('click', e=>{
+        if(e.target.tagName != 'I'){
+            any.parentElement.classList.remove('show');
+        }
+    })
 }
