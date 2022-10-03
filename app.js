@@ -48,7 +48,7 @@ let showNotes = () => {
         </div>
         <div class="note-bottom">
             <span>${note.date} </span>
-            <span"><i class="fa-solid fa-ellipsis"></i>
+            <span><i class="fa-solid fa-ellipsis"></i>
                 <div class="menu">
                     <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
                     <span><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
