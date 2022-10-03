@@ -6,15 +6,18 @@ addBtn = popupBox.querySelector('button'),
 addNoteTitle = popupBox.querySelector('.form-title input'),
 addNoteDesc = popupBox.querySelector('.form-description textarea')
 
+let isUpdate = false, updateId;
 
 let notes = JSON.parse(localStorage.getItem('notes') || '[]') ;
 addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
+    addNoteTitle.focus();
 })
 closeIcon.addEventListener('click',()=>{
     popupBox.classList.remove('show');
     addNoteDesc.value = '';
     addNoteTitle.value = '';
+    isUpdate = false;
 })
 
 addBtn.addEventListener('click',()=>{        
@@ -22,16 +25,20 @@ addBtn.addEventListener('click',()=>{
     let day = dateObj.getDay();
     let month = dateObj.getDay();
     let year = dateObj.getFullYear();
+    let filterDesc = addNoteDesc.value.replaceAll('\n','<br/>');
     if(!addNoteTitle.value && !addNoteDesc.value){        
     }else{
-        let noteObj = {title:addNoteTitle.value, desc:addNoteDesc.value, date:`${day} ${month} ${year}`};
-        notes.push(noteObj);
+        let noteObj = {title:addNoteTitle.value, desc:filterDesc, date:`${day} ${month} ${year}`};
+        if(isUpdate){
+            notes[updateId] = noteObj;
+        }else{
+            notes.push(noteObj);
+        }        
         localStorage.setItem('notes', JSON.stringify(notes));
         closeIcon.click();
         showNotes();
     }    
 })
-
 let showNotes = () => {
     document.querySelectorAll('.note').forEach(note=>note.remove());
     notes.forEach((note, id)=>{
@@ -49,7 +56,7 @@ let showNotes = () => {
             <span>${note.date} </span>
             <span onclick="showMenu(this)"><i class="fa-solid fa-ellipsis"></i>
                 <div class="menu">
-                    <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
+                    <span onclick="updateNote(${id},'${note.title}','${note.desc}','${note.date}')"><i class="fa-regular fa-pen-to-square"></i>Edit</span>
                     <span onclick="deleteNote(${id})"><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
                 </div>
             </span>                
@@ -60,6 +67,15 @@ let showNotes = () => {
     })
 }
 showNotes();
+
+let updateNote = (id, title, desc) => {
+    updateId = id;
+    isUpdate = true;
+    let filterDesc = desc.replaceAll('<br/>',  '\n');
+    addBox.click();
+    addNoteDesc.value = filterDesc;
+    addNoteTitle.value = title;
+}
 
 let showMenu = (any) => {    
     any.parentElement.classList.add('show');
