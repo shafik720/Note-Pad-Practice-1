@@ -4,7 +4,9 @@ addBox = document.querySelector('.add-box'),
 popupBox = document.querySelector('.pop-box'),
 addBtn = popupBox.querySelector('button'),
 addNoteTitle = popupBox.querySelector('.form-title input'),
-addNoteDesc = popupBox.querySelector('.form-description textarea')
+addNoteDesc = popupBox.querySelector('.form-description textarea'),
+popupHeader = popupBox.querySelector('.popup-header p'),
+popupButton = popupBox.querySelector('.popup-details button')
 
 let isUpdate = false, updateId;
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -13,6 +15,8 @@ let notes = JSON.parse(localStorage.getItem('notes') || '[]') ;
 addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
     addNoteTitle.focus();
+    popupHeader.innerText = 'Add a New Note';
+    popupButton.innerText = 'Save Note';
 })
 closeIcon.addEventListener('click',()=>{
     popupBox.classList.remove('show');
@@ -76,6 +80,9 @@ let updateNote = (id, title, desc) => {
     addBox.click();
     addNoteDesc.value = filterDesc;
     addNoteTitle.value = title;
+
+    popupHeader.innerText = 'Edit Note';
+    popupButton.innerText = 'Update Note';
 }
 
 let showMenu = (any) => {    
