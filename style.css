@@ -194,7 +194,7 @@ body{
     transition: all 0.3s;
     transform-origin: bottom right;
 }
-#elipsis:hover .menu{
+.note-bottom.show .menu{
     transform: scale(1);
 }
 .note-bottom .menu span{

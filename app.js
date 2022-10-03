@@ -8,7 +8,6 @@ addNoteDesc = popupBox.querySelector('.form-description textarea')
 
 
 let notes = JSON.parse(localStorage.getItem('notes') || '[]') ;
-console.log(notes);
 addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
 })
@@ -48,7 +47,7 @@ let showNotes = () => {
         </div>
         <div class="note-bottom">
             <span>${note.date} </span>
-            <span><i class="fa-solid fa-ellipsis"></i>
+            <span onclick="showMenu(this)"><i class="fa-solid fa-ellipsis"></i>
                 <div class="menu">
                     <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
                     <span><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
@@ -61,3 +60,12 @@ let showNotes = () => {
     })
 }
 showNotes();
+
+let showMenu = (any) => {    
+    any.parentElement.classList.add('show');
+    document.addEventListener('click', e=>{
+        if(e.target.tagName != 'I'){
+            any.parentElement.classList.remove('show');
+        }
+    })
+}
