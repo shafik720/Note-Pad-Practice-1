@@ -29,6 +29,33 @@ addBtn.addEventListener('click',()=>{
         notes.push(noteObj);
         localStorage.setItem('notes', JSON.stringify(notes));
         closeIcon.click();
-    }
-    
+    }    
 })
+
+let showNotes = () => {
+    notes.forEach(note=>{
+        let div = `
+        <div class="note">            
+        <div class="note-body">
+            <div class="note-header">
+                <p>${note.title}</p>                
+            </div>
+            <div class="note-details">
+                <span>${note.desc}</span>
+            </div>
+        </div>
+        <div class="note-bottom">
+            <span>${note.date} </span>
+            <span id="elipsis"><i class="fa-solid fa-ellipsis"></i>
+                <div class="menu">
+                    <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
+                    <span><i style="color: red;" class="fa-solid fa-trash"></i>Delete</span>
+                </div>
+            </span>                
+        </div>
+    </div>
+        `;
+        addBox.insertAdjacentHTML('afterend', div);
+    })
+}
+showNotes();
