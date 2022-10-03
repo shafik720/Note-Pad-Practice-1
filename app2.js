@@ -26,7 +26,34 @@ addButton.addEventListener('click',()=>{
         let month = dateObj.getMonth();
         let year = dateObj.getFullYear();
         let noteObj = {title:addNoteTitle.value, desc:addNoteDesc.value, date:`${day} ${month} ${year} `};
+        notes.push(noteObj);
+        localStorage.setItem('notes', JSON.stringify(notes));
         
-    }
-    
+        closeIcon.click();
+        showNotes();
+    }    
 })
+
+const showNotes = () =>{
+    document.querySelectorAll('.note').forEach(note=>note.remove());
+    notes.forEach(note=>{
+        let div = `
+        <div class="note">            
+        <div class="note-body">
+            <div class="note-header">
+                <p>${note.title}</p>                
+            </div>
+            <div class="note-details">
+                <span>${note.desc}</span>
+            </div>
+        </div>
+        <div class="note-bottom">
+            <span>${note.date}</span>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+    </div>
+        `;
+        addBox.insertAdjacentHTML('afterend',div);
+    })    
+}
+showNotes();
